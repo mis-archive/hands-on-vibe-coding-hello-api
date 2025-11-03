@@ -52,3 +52,23 @@ The API will be deployed to Google Cloud Run via a connection to GitHub. Add wha
 - Create a private remote repository in GitHub
 - Commit your local repository and push it to GitHub
 - We'll pick up with this in the next class
+
+---
+
+# Run the FastAPI service locally
+
+## Setup (Windows PowerShell)
+- Create and activate a virtual environment:
+  - `python -m venv .venv`
+  - `. .venv/Scripts/Activate.ps1`
+
+- Install dependencies:
+  - `pip install -r requirements.txt`
+
+## Start the server
+- Run with auto-reload on port 8000:
+  - `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
+
+## Try the endpoints
+- `curl http://localhost:8000/hello`
+- `curl http://localhost:8000/goodbye`
