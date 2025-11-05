@@ -1,3 +1,48 @@
+# FastAPI Hello/Goodbye API
+
+A minimal FastAPI service exposing two endpoints:
+- `GET /hello` — casual hello message
+- `GET /goodbye` — casual goodbye message
+
+## Requirements
+- Python 3.11+
+
+## Setup (local)
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Visit:
+- http://127.0.0.1:8000/hello
+- http://127.0.0.1:8000/goodbye
+
+Interactive docs (once running):
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
+
+## Run with Docker
+```bash
+# Build
+docker build -t hello-api:local .
+
+# Run
+docker run --rm -p 8000:8000 hello-api:local
+```
+
+## Project Structure
+```
+app/
+  main.py           # FastAPI app with /hello and /goodbye
+requirements.txt    # Python dependencies
+Dockerfile          # Container image for the app
+```
+
+## Notes
+- This repo is prepared for future deployment (e.g., Cloud Run). CI/CD wiring can be added later.
+- Update this README if the application or commands change.
 # Hands-On Practice: Intro to Vibe Coding with Cursor
 This project will show you how to correctly structure a vibe-coded application using Cursor.
 
